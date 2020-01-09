@@ -12,8 +12,9 @@ class UserController extends Controller{
 
     public function index()
     {
-    	$user = User::all();
-    	return view('user', ['user' => $user]);
+        // pakai query builder biar primary key bisa tampil di tabel
+        $user = DB::table('users')->get();
+        return view('user', ['user' => $user]);
     }
 
     public function tambah()
@@ -39,7 +40,8 @@ class UserController extends Controller{
     }
 
     public function edit($username){
-    		$user = User::find($username);
+            //query builder
+            $user = DB::table('users')->where('username',$username)->get();
     		return view('user_edit', ['user' => $user]);
     }
 
