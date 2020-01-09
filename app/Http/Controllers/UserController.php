@@ -8,22 +8,20 @@ use Illuminate\Support\Facades\DB;
 
 use App\User;
 
+use PDF;
+
 class UserController extends Controller{
 
-    public function index()
-    {
-        // pakai query builder biar primary key bisa tampil di tabel
+    public function index(){
         $user = DB::table('users')->get();
         return view('user', ['user' => $user]);
     }
 
-    public function tambah()
-    {
+    public function tambah(){
     	return view('user_tambah');
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
     	$this->validate($request,[
 			'username' => 'required',
 			'password' => 'required',
@@ -39,21 +37,19 @@ class UserController extends Controller{
     	return redirect('/user');
     }
 
-    public function edit($username){
-            //query builder
-            $user = DB::table('users')->where('username',$username)->get();
+    public function edit($email){
+            $user = DB::table('users')->where('email',$email)->get();
     		return view('user_edit', ['user' => $user]);
     }
 
-	 public function update($username, Request $request)
-	 {
+	 public function update($email, Request $request){
 		$this->validate($request,[
-			'username' => 'required',
+			'email' => 'required',
 			'password' => 'required',
 			'email' => 'required',
     	]);
 
-    		$user = User::find($username);
+    		$user = User::find($email);
 			$user->username = $request->username;
 			$user->password = $request->password;
 			$user->email = $request->email;
@@ -61,17 +57,14 @@ class UserController extends Controller{
     		return redirect('/user');
     }
 
-     public function delete($username)
-    {
-    		$user = User::find($username);
-    		$user->delete();
-    		return redirect('/user');
+    public function delete($email){
+        $user = User::find($email);
+        $user->delete();
+        return redirect('/user');
 	}
 	
-	public function cetak_pdf()
-	{
-		$user = User::all();
-	
+	public function cetak_pdf(){
+        $user = DB::table('users')->get();
 		$pdf = PDF::loadview('user_pdf',['user'=>$user]);
 		return $pdf->download('laporan-user-pdf');
 	}

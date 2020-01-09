@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://localhost/admin/bootstrap.min.css" rel="stylesheet">
         <title>User</title>
     </head>
     <body>
@@ -19,20 +19,20 @@
                     <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
+                                <th>Email</th>
                                 <th>Username</th>
                                 <th>Password</th>
-                                <th>Email</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($user as $p)
                             <tr>
+                                <td>{{ $p->email }}</td>
                                 <td>{{ $p->username }}</td>
                                 <td>{{ $p->password }}</td>
-                                <td>{{ $p->email }}</td>
                                 <td>
-                                    <a href="/user/edit/{{ $p->username }}" class="btn btn-warning">Edit</a>
-                                    <a href="/user/hapus/{{ $p->username }}" class="btn btn-danger">Hapus</a>
+                                    <a href="/user/edit/{{ $p->email }}" class="btn btn-warning">Edit</a>
+                                    <a href="/user/hapus/{{ $p->email }}" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
                             @endforeach
