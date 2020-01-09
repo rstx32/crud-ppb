@@ -42,7 +42,7 @@ class BarangController extends Controller{
     }
 
     public function edit($kd_brg){
-    		$barang = Barang::find($kd_brg);
+			$barang = DB::table('barang')->where('kd_brg',$kd_brg)->get();
     		return view('barang_edit', ['barang' => $barang]);
     }
 

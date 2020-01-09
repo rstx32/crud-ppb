@@ -10,7 +10,7 @@
         <div class="container">
             <div class="card mt-5">
                 <div class="card-header text-center">
-                    CRUD Barang
+                    Daftar Barang
                 </div>
                 <div class="card-body">
                     <a href="/barang/tambah" class="btn btn-primary">Input Barang Baru</a>

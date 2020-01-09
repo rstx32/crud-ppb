@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://localhost/admin/bootstrap.min.css" rel="stylesheet">
         <title>Edit Barang</title>
     </head>
     <body>
@@ -16,15 +16,15 @@
                     <a href="/barang" class="btn btn-primary">Kembali</a>
                     <br/>
                     <br/>
-
-                    <form method="post" action="/barang/update/{{ $barang->kd_brg }}">
+                    @foreach($barang as $p)
+                    <form method="post" action="/barang/update/{{ $p->kd_brg }}">
 
                         {{ csrf_field() }}
                         {{ method_field('PUT') }} 
 
                         <div class="form-group">
                             <label>Kode Barang</label>
-                            <input type="text" name="kd_brg" class="form-control" placeholder="Kode barang..." value="{{$barang->kd_brg}}">
+                            <input disabled type="text" name="kd_brg" class="form-control" placeholder="Kode barang..." value="{{$p->kd_brg}}">
 
                             @if($errors->has('kd_brg'))
                                 <div class="text-danger">
@@ -36,7 +36,7 @@
 
                         <div class="form-group">
                             <label>Nama Barang</label>
-                            <input type="text" name="nm_brg" class="form-control" placeholder="Nama barang..." value="{{$barang->nm_brg}}">
+                            <input type="text" name="nm_brg" class="form-control" placeholder="Nama barang..." value="{{$p->nm_brg}}">
 
                             @if($errors->has('nm_brg'))
                                 <div class="text-danger">
@@ -48,7 +48,7 @@
 
                         <div class="form-group">
                             <label>Harga</label>
-                            <input type="text" name="harga" class="form-control" placeholder="Harga..." value="{{$barang->harga}}">
+                            <input type="text" name="harga" class="form-control" placeholder="Harga..." value="{{$p->harga}}">
 
                             @if($errors->has('harga'))
                                 <div class="text-danger">
@@ -60,7 +60,7 @@
 
                         <div class="form-group">
                             <label>Image</label>
-                            <input type="text" name="image" class="form-control" placeholder="Image..." value="{{$barang->image}}">
+                            <input type="text" name="image" class="form-control" placeholder="Image..." value="{{$p->image}}">
 
                             @if($errors->has('image'))
                                 <div class="text-danger">
@@ -72,7 +72,7 @@
 
                         <div class="form-group">
                             <label>Deskripsi</label>
-                            <input type="text" name="deskripsi" class="form-control" placeholder="Deskripsi..." value="{{$barang->deskripsi}}">
+                            <input type="text" name="deskripsi" class="form-control" placeholder="Deskripsi..." value="{{$p->deskripsi}}">
 
                             @if($errors->has('deskripsi'))
                                 <div class="text-danger">
@@ -87,7 +87,7 @@
                         </div>
 
                     </form>
-
+                    @endforeach
                 </div>
             </div>
         </div>
