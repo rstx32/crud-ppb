@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://localhost/admin/bootstrap.min.css" rel="stylesheet">
         <title>Barang</title>
     </head>
     <body>
@@ -14,8 +14,9 @@
                 </div>
                 <div class="card-body">
                     <a href="/barang/tambah" class="btn btn-primary">Input Barang Baru</a>
-                    <a href="/barang/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
-                    <br/>
+                    <a href="/barang/cetak_pdf" class="btn btn-danger" target="_blank">CETAK PDF</a>
+                    <a href="/barang/export_excel" class="btn btn-success my-3" target="_blank">EXPORT EXCEL</a>
+                    <br>
                     <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
@@ -31,8 +32,8 @@
                             <tr>
                                 <td>{{ $p->kd_brg }}</td>
                                 <td>{{ $p->nm_brg }}</td>
-                                <td>{{ $p->harga }}</td>
-                                <td>{{ $p->image }}</td>
+                                <td>Rp. {{ $p->harga }}</td>
+                                <td><img src="{{ $p->image }}" width="250" height="200"></td>
                                 <td>{{ $p->deskripsi }}</td>
                                 <td>
                                     <a href="/barang/edit/{{ $p->kd_brg }}" class="btn btn-warning">Edit</a>

@@ -22,6 +22,18 @@
                         {{ csrf_field() }}
 
                         <div class="form-group">
+                            <label>Kode Barang</label>
+                            <input type="text" name="kd_brg" class="form-control" placeholder="Kode barang...">
+
+                            @if($errors->has('kd_brg'))
+                                <div class="text-danger">
+                                    {{ $errors->first('kd_brg')}}
+                                </div>
+                            @endif
+
+                        </div>
+
+                        <div class="form-group">
                             <label>Nama Barang</label>
                             <input type="text" name="nm_brg" class="form-control" placeholder="Nama barang...">
 
