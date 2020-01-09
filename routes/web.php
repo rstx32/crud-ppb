@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// barang
 Route::get('/barang', 'BarangController@index');
 Route::get('/barang/tambah', 'BarangController@tambah');
 Route::post('/barang/store', 'BarangController@store');
@@ -22,3 +23,12 @@ Route::get('/barang/edit/{kd_brg}', 'BarangController@edit');
 Route::put('/barang/update/{kd_brg}', 'BarangController@update');
 Route::get('/barang/hapus/{kd_brg}', 'BarangController@delete');
 Route::get('/barang/cetak_pdf', 'BarangController@cetak_pdf');
+
+// user
+Route::get('/user', 'UserController@index');
+Route::get('/user/tambah', 'UserController@tambah');
+Route::post('/user/store', 'UserController@store');
+Route::get('/user/edit/{username}', 'UserController@edit');
+Route::put('/user/update/{username}', 'UserController@update');
+Route::get('/user/hapus/{username}', 'UserController@delete');
+Route::get('/user/cetak_pdf', 'UserController@cetak_pdf');
