@@ -9,8 +9,18 @@
     <body>
         <div class="container">
             <div class="card mt-5">
-                <div class="card-header text-center">
-                    Daftar Barang
+                <!-- <div class="card-header text-center">
+                    Admin
+                </div> -->
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Barang</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user">User</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="card-body">
                     <a href="/barang/tambah" class="btn btn-primary">Input Barang Baru</a>
@@ -20,22 +30,23 @@
                     <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Kode Barang</th>
-                                <th>Nama Barang</th>
-                                <th>Harga</th>
-                                <th>Gambar</th>
-                                <th>Deskripsi</th>
+                                <th class="text-center">Kode Barang</th>
+                                <th class="text-center">Nama Barang</th>
+                                <th class="text-center">Harga</th>
+                                <th class="text-center">Gambar</th>
+                                <th class="text-center">Deskripsi</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($barang as $p)
                             <tr>
-                                <td>{{ $p->kd_brg }}</td>
-                                <td>{{ $p->nm_brg }}</td>
-                                <td>Rp. {{ $p->harga }}</td>
-                                <td><img src="{{ $p->image }}" width="250" height="200"></td>
-                                <td>{{ $p->deskripsi }}</td>
-                                <td>
+                                <td class="text-center">{{ $p->kd_brg }}</td>
+                                <td class="text-center">{{ $p->nm_brg }}</td>
+                                <td class="text-center">Rp. {{ $p->harga }}</td>
+                                <td class="text-center"><img src="{{ $p->image }}" width="250" height="200"></td>
+                                <td class="text-center">{{ $p->deskripsi }}</td>
+                                <td class="text-center">
                                     <a href="/barang/edit/{{ $p->kd_brg }}" class="btn btn-warning">Edit</a>
                                     <a href="/barang/hapus/{{ $p->kd_brg }}" class="btn btn-danger">Hapus</a>
                                 </td>
