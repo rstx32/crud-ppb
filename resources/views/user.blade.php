@@ -15,6 +15,7 @@
                 <div class="card-body">
                     <a href="/user/tambah" class="btn btn-primary">Input User Baru</a>
                     <a href="/user/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
+                    <a href="/user/export_excel" class="btn btn-success my-3" target="_blank">EXPORT EXCEL</a>
                     <br/>
                     <table class="table table-bordered table-hover table-striped">
                         <thead>

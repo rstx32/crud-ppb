@@ -23,6 +23,7 @@ Route::get('/barang/edit/{kd_brg}', 'BarangController@edit');
 Route::put('/barang/update/{kd_brg}', 'BarangController@update');
 Route::get('/barang/hapus/{kd_brg}', 'BarangController@delete');
 Route::get('/barang/cetak_pdf', 'BarangController@cetak_pdf');
+Route::get('/barang/export_excel', 'BarangController@export_excel');
 
 // user
 Route::get('/user', 'UserController@index');
@@ -32,3 +33,4 @@ Route::get('/user/edit/{email}', 'UserController@edit');
 Route::put('/user/update/{email}', 'UserController@update');
 Route::get('/user/hapus/{email}', 'UserController@delete');
 Route::get('/user/cetak_pdf', 'UserController@cetak_pdf');
+Route::get('/user/export_excel', 'UserController@export_excel');

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UserExcelExport;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\DB;
-
 use App\User;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 use PDF;
 
 class UserController extends Controller{
@@ -67,5 +67,9 @@ class UserController extends Controller{
         $user = DB::table('users')->get();
 		$pdf = PDF::loadview('user_pdf',['user'=>$user]);
 		return $pdf->download('laporan-user-pdf');
-	}
+    }
+    
+    public function export_excel(){
+        return Excel::download(new UserExcelExport, 'daftar_user.xlsx');
+    }
 }
