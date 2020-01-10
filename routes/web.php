@@ -34,3 +34,6 @@ Route::put('/user/update/{email}', 'UserController@update');
 Route::get('/user/hapus/{email}', 'UserController@delete');
 Route::get('/user/cetak_pdf', 'UserController@cetak_pdf');
 Route::get('/user/export_excel', 'UserController@export_excel');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
