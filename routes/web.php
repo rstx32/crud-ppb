@@ -26,14 +26,15 @@ Route::get('/barang/cetak_pdf', 'BarangController@cetak_pdf');
 Route::get('/barang/export_excel', 'BarangController@export_excel');
 
 // user
-Route::get('/user', 'UserController@index');
-Route::get('/user/tambah', 'UserController@tambah');
-Route::post('/user/store', 'UserController@store');
-Route::get('/user/edit/{email}', 'UserController@edit');
-Route::put('/user/update/{email}', 'UserController@update');
-Route::get('/user/hapus/{email}', 'UserController@delete');
-Route::get('/user/cetak_pdf', 'UserController@cetak_pdf');
-Route::get('/user/export_excel', 'UserController@export_excel');
-Auth::routes();
+Route::get('/pelanggan', 'PelangganController@index');
+Route::get('/pelanggan/tambah', 'PelangganController@tambah');
+Route::post('/pelanggan/store', 'PelangganController@store');
+Route::get('/pelanggan/edit/{email}', 'PelangganController@edit');
+Route::put('/pelanggan/update/{email}', 'PelangganController@update');
+Route::get('/pelanggan/hapus/{email}', 'PelangganController@delete');
+Route::get('/pelanggan/cetak_pdf', 'PelangganController@cetak_pdf');
+Route::get('/pelanggan/export_excel', 'PelangganController@export_excel');
 
+// auth login & register
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

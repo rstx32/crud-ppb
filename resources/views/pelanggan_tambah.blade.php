@@ -4,19 +4,19 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="http://localhost/admin/bootstrap.min.css" rel="stylesheet">
-        <title>Tambah User</title>
+        <title>Tambah Pelanggan</title>
     </head>
     <body>
         <div class="container">
             <div class="card mt-5">
                 <div class="card-header text-center">
-                    Tambah User
+                    Tambah Pelanggan
                 </div>
                 <div class="card-body">
-                    <a href="/user" class="btn btn-primary">Kembali</a>
+                    <a href="/pelanggan" class="btn btn-primary">Kembali</a>
                     <br/>
                     
-                    <form method="post" action="/user/store">
+                    <form method="post" action="/pelanggan/store">
 
                         {{ csrf_field() }}
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Daftar User</title>
+	<title>Daftar Pelanggan</title>
 	<link rel="stylesheet" href="http://localhost/admin/bootstrap.min.css" crossorigin="anonymous">
 </head>
 <body>
@@ -12,7 +12,7 @@
 		}
 	</style>
 	<center>
-		<h5>Daftar User</h4>
+		<h5>Daftar Pelanggan</h4>
 	</center>
 
 	<table class='table table-bordered'>
@@ -26,7 +26,7 @@
 		</thead>
 		<tbody>
 			@php $i=1 @endphp
-			@foreach($user as $p)
+			@foreach($pelanggan as $p)
 			<tr>
 				<td>{{ $i++ }}</td>
 				<td>{{$p->username}}</td>

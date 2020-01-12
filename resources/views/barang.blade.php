@@ -18,7 +18,7 @@
                             <a class="nav-link active" href="#">Barang</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/user">User</a>
+                            <a class="nav-link" href="/pelanggan">Pelanggan</a>
                         </li>
                     </ul>
                 </div>

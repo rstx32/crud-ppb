@@ -4,20 +4,20 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="http://localhost/admin/bootstrap.min.css" rel="stylesheet">
-        <title>Edit User</title>
+        <title>Edit Pelanggan</title>
     </head>
     <body>
         <div class="container">
             <div class="card mt-5">
                 <div class="card-header text-center">
-                    Edit User
+                    Edit Pelanggan
                 </div>
                 <div class="card-body">
-                    <a href="/user" class="btn btn-primary">Kembali</a>
+                    <a href="/pelanggan" class="btn btn-primary">Kembali</a>
                     <br/>
                     <br/>
-                    @foreach($user as $p)
-                    <form method="post" action="/user/update/{{$p->email}}">
+                    @foreach($pelanggan as $p)
+                    <form method="post" action="/pelanggan/update/{{$p->email}}">
 
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}     
