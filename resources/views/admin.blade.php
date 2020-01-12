@@ -56,14 +56,13 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
-
-                <p>New Orders</p>
+                <h3>{{$total_barang}}</h3>
+                <p>Total Barang</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="./barang" class="small-box-footer">Informasi Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           
@@ -72,14 +71,14 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3>{{$total_pelanggan}}</h3>
 
-                <p>User Registrations</p>
+                <p>Total Pelanggan</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="./pelanggan" class="small-box-footer">Informasi Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>    
     </section>

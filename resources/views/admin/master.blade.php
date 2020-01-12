@@ -1,3 +1,4 @@
+@if (Auth::user())
 <!DOCTYPE html>
 <html>
 <head>
@@ -142,3 +143,6 @@
 <script src="{{ asset('/lte/dist/js/demo.js') }}"></script>
 </body>
 </html>
+@else
+    <div class="text-center alert alert-danger" role="alert">LOGIN SEK GAN</div>
+@endif
