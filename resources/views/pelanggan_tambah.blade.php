@@ -1,21 +1,48 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="http://localhost/admin/bootstrap.min.css" rel="stylesheet">
-        <title>Tambah Pelanggan</title>
-    </head>
-    <body>
+@extends('admin.master')
+@section('content')
+<!-- Sidebar -->
+<div class="sidebar">
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+              <li class="nav-item">
+                <a href="./dashboard" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./barang" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                  <p>Barang</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./pelanggan" class="nav-link active">
+                <i class="nav-icon fas fa-table"></i>
+                  <p>Pelanggan</p>
+                </a>
+              </li>
+          </li>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+  
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
         <div class="container">
             <div class="card mt-5">
-                <div class="card-header text-center">
+                <div class="card-header text-center h3">
                     Tambah Pelanggan
                 </div>
-                <div class="card-body">
-                    <a href="/pelanggan" class="btn btn-primary">Kembali</a>
-                    <br/>
-                    
+                <div class="card-body">                    
                     <form method="post" action="/pelanggan/store">
 
                         {{ csrf_field() }}
@@ -57,6 +84,7 @@
                         </div>
 
                         <div class="form-group">
+                            <a href="/pelanggan" class="btn btn-primary">Batal</a>
                             <input type="submit" class="btn btn-success" value="Simpan">
                         </div>
 
@@ -65,5 +93,6 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </section>
+</div>
+@endsection
