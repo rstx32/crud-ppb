@@ -1,30 +1,48 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="http://localhost/admin/bootstrap.min.css" rel="stylesheet">
-        <title>Barang</title>
-    </head>
-    <body>
+@extends('admin.master')
+@section('content')
+<!-- Sidebar -->
+<div class="sidebar">
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview menu-open">
+              <li class="nav-item">
+                <a href="./dashboard" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./barang" class="nav-link active">
+                <i class="nav-icon fas fa-th"></i>
+                  <p>Barang</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./pelanggan" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                  <p>Pelanggan</p>
+                </a>
+              </li>
+          </li>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+  
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
         <div class="container">
             <div class="card mt-5">
-                <!-- <div class="card-header text-center">
-                    Admin
-                </div> -->
-                <div class="card-header">
-                    <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Barang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/pelanggan">Pelanggan</a>
-                        </li>
-                    </ul>
-                </div>
                 <div class="card-body">
+                    <h1 class="text-center text-dark">Daftar Barang</h1>
                     <a href="/barang/tambah" class="btn btn-primary">Input Barang Baru</a>
-                    <a href="/barang/cetak_pdf" class="btn btn-danger" target="_blank">CETAK PDF</a>
+                    <a href="/barang/cetak_pdf" class="btn btn-danger my-3" target="_blank">CETAK PDF</a>
                     <a href="/barang/export_excel" class="btn btn-success my-3" target="_blank">EXPORT EXCEL</a>
                     <br>
                     <table class="table table-bordered table-hover table-striped">
@@ -57,5 +75,6 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </section>
+</div>
+@endsection

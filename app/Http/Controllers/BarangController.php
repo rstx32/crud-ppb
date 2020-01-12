@@ -64,14 +64,13 @@ class BarangController extends Controller{
     }
 
     public function delete($kd_brg){
-    		$barang = Barang::find($kd_brg);
-    		$barang->delete();
-    		return redirect('/barang');
+		$barang = Barang::find($kd_brg);
+		$barang->delete();
+		return redirect('/barang');
 	}
 	
 	public function cetak_pdf(){
-		$barang = Barang::all();
-	
+		$barang = DB::table('barang')->get();
 		$pdf = PDF::loadview('barang_pdf',['barang'=>$barang]);
 		return $pdf->download('laporan-barang-pdf');
 	}

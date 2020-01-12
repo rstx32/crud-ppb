@@ -1,23 +1,10 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="http://localhost/admin/bootstrap.min.css" rel="stylesheet">
-        <title>Pelanggan</title>
-    </head>
+@extends('admin.admin')
+    @section('content')
     <body>
         <div class="container">
             <div class="card mt-5">
                 <div class="card-header">
-                    <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/barang">Barang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Pelanggan</a>
-                        </li>
-                    </ul>
+                    Daftar Pelanggan
                 </div>
                 <div class="card-body">
                     <a href="/pelanggan/tambah" class="btn btn-primary">Input Pelanggan Baru</a>
@@ -51,4 +38,4 @@
             </div>
         </div>
     </body>
-</html>
+    @endsection

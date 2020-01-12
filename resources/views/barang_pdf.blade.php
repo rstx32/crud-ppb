@@ -30,12 +30,12 @@
 			@php $i=1 @endphp
 			@foreach($barang as $p)
 			<tr>
-				<td>{{ $i++ }}</td>
-				<td>{{$p->kd_brg}}</td>
-				<td>{{$p->nm_brg}}</td>
-				<td>{{$p->harga}}</td>
-				<td>{{$p->image}}</td>
-				<td>{{$p->deskripsi}}</td>
+				<td class="text-center">{{ $i++ }}</td>
+				<td class="text-center">{{ $p->kd_brg }}</td>
+				<td class="text-center">{{ $p->nm_brg }}</td>
+				<td class="text-center">Rp. {{ $p->harga }}</td>
+				<td class="text-center"><img src="{{ $p->image }}" width="250" height="200"></td>
+				<td class="text-center">{{ $p->deskripsi }}</td>
 			</tr>
 			@endforeach
 		</tbody>
