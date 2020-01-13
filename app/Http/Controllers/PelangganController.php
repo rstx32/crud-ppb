@@ -44,17 +44,15 @@ class PelangganController extends Controller{
 
 	 public function update($email, Request $request){
 		$this->validate($request,[
-			'email' => 'required',
+			'username' => 'required',
 			'password' => 'required',
-			'email' => 'required',
     	]);
 
-    		$pelanggan = Pelanggan::find($email);
-			$pelanggan->username = $request->username;
-			$pelanggan->password = $request->password;
-			$pelanggan->email = $request->email;
-    		$pelanggan->save();
-    		return redirect('/pelanggan');
+		$pelanggan = Pelanggan::find($email);
+		$pelanggan->username = $request->username;
+		$pelanggan->password = $request->password;
+		$pelanggan->save();
+		return redirect('/pelanggan');
     }
 
     public function delete($email){
