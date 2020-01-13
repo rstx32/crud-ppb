@@ -4,8 +4,6 @@
 	<title>Login Admin PPB</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{{ asset('loginTemplate/images/icons/favicon.ico') }}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('loginTemplate/vendor/bootstrap/css/bootstrap.min.cs') }}s">
 <!--===============================================================================================-->
@@ -35,7 +33,7 @@
 				<form form method="POST" action="{{ route('login') }}" class="login100-form validate-form flex-sb flex-w">
                     @csrf
                     <span class="login100-form-title p-b-51">
-						Login
+						Login Admin PPB
 					</span>
 
 					
